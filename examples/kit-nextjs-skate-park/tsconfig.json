@@ -16,15 +16,12 @@
       ],
       ".sitecore/*": [
         ".sitecore/*"
-      ],
-      "next/*": [
-        "node_modules/next/*"
-      ],
-      "@/*": [
-        "./src/*"
       ]
     },
     "target": "ES2017",
+    "types": [
+      "node"
+    ],
     "lib": [
       "dom",
       "dom.iterable",

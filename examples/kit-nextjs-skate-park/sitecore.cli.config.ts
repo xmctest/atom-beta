@@ -19,12 +19,13 @@ export default defineCliConfig({
       }),
     ],
   },
+  atoms: {
+    validation: {
+      breakOnError: false,
+    },
+  },
   componentMap: {
     paths: ['src/components'],
-    exclude: [
-      'src/components/content-sdk/*',
-      '**/*.props.ts',
-      '**/*.props.tsx',
-    ],
+    exclude: ['src/components/content-sdk/*'],
   },
 });
