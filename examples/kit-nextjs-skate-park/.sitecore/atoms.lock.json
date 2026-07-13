@@ -1,6 +1,6 @@
 {
-  "version": "1.0.2",
-  "generated": "2026-07-13T08:30:38.563Z",
+  "version": "1.0.4",
+  "generated": "2026-07-13T14:24:29.326Z",
   "atoms": {
     "Card": {
       "hash": "29f8648def21191f279bc72ffd6b66df8eab9fc16f03f88e86a324a6db4b3204"
@@ -140,7 +140,7 @@
     },
     "SitecoreActionButton": {
       "version": "1.0.0",
-      "hash": "20fe906dd06434de1ac45bc178773e7b6e0cfac305789c70a28c167354ba9b21"
+      "hash": "4d6dd319981fb56c8f49090373d06cfce032027ddd1d8e95ee5e635ae2096162"
     }
   }
 }

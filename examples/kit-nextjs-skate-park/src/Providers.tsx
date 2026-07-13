@@ -4,12 +4,10 @@ import { Page, SitecoreProvider } from '@sitecore-content-sdk/nextjs';
 import scConfig from 'sitecore.config';
 import components from '.sitecore/component-map.client';
 import { catalog, registry } from 'src/atoms';
-import { bindAtomsNavigate } from 'src/atoms/registry-actions';
 import { useRouter } from 'next/navigation';
 
 export default function Providers({ children, page }: { children: React.ReactNode; page: Page }) {
   const router = useRouter();
-  bindAtomsNavigate(router.push);
 
   return (
     <SitecoreProvider

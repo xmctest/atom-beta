@@ -30,7 +30,7 @@ const sitecoreFieldParents = [
 ] as const;
 
 export const catalog = defineAtomsCatalog({
-  version: '1.0.2',
+  version: '1.0.4',
   components: {
     Card: {
       ...shadcnComponentDefinitions.Card,
@@ -181,7 +181,7 @@ export const catalog = defineAtomsCatalog({
       version: '1.0.0',
       props: z.object({ label: textFieldSchema() }),
       description:
-        'Custom action button — emits press; bind to navigate, trackEvent, push (built-in), or setState',
+        'Custom action button — emits press; bind to validateForm, navigate, trackEvent, push, or setState',
       events: ['press'],
       allowedParents: [...sitecoreFieldParents],
     },
@@ -189,7 +189,8 @@ export const catalog = defineAtomsCatalog({
   actions: {
     navigate: {
       params: z.object({ path: z.string() }),
-      description: 'Navigate to an internal application route via Next.js router',
+      description:
+        'Route change via atomsConfig.navigate — bind Button on.press with onSuccess: { navigate: "/path" } (not action params)',
     },
     trackEvent: {
       params: z.object({
@@ -204,6 +205,13 @@ export const catalog = defineAtomsCatalog({
     },
     pop: {
       description: 'Built-in json-render screen pop — restores previous /currentScreen from /navStack',
+    },
+    validateForm: {
+      params: z.object({
+        statePath: z.string().optional(),
+      }),
+      description:
+        'Built-in json-render form validation — writes { valid, errors } to /formValidation or the supplied statePath',
     },
   },
 });
