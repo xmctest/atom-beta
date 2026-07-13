@@ -30,18 +30,20 @@
     "sitecore-tools:atoms:update": "sitecore-tools project atoms update"
   },
   "dependencies": {
+    "@json-render/react": "^0.19.0",
+    "@json-render/shadcn": "^0.19.0",
     "@sitecore-content-sdk/analytics-core": "2.1.1-beta.atoms.20260709143238",
-    "@sitecore-content-sdk/personalize": "2.1.1-beta.atoms.20260709143238",
     "@sitecore-content-sdk/events": "2.1.1-beta.atoms.20260709143238",
     "@sitecore-content-sdk/nextjs": "2.3.0-beta.atoms.20260709143238",
+    "@sitecore-content-sdk/personalize": "2.1.1-beta.atoms.20260709143238",
     "@sitecore-feaas/clientside": "^0.6.0",
     "@sitecore/components": "~2.1.0",
     "next": "^16.2.0",
+    "next-intl": "^4.3.5",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "next-intl": "^4.3.5",
-    "zod": "^4.3.6",
-    "tailwind-bootstrap-grid": "^6.0.0"
+    "tailwind-bootstrap-grid": "^6.0.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
