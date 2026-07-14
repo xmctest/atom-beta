@@ -1,6 +1,6 @@
 {
   "version": "1.0.4",
-  "generated": "2026-07-13T14:24:29.326Z",
+  "generated": "2026-07-14T07:12:34.828Z",
   "atoms": {
     "Card": {
       "hash": "29f8648def21191f279bc72ffd6b66df8eab9fc16f03f88e86a324a6db4b3204"
@@ -109,38 +109,6 @@
     },
     "Pagination": {
       "hash": "cfbb341b47e91b5d04dc2589cd7a236c076697099ec3cf9c9c91d613174cd1c4"
-    },
-    "SitecorePageLayout": {
-      "version": "1.0.0",
-      "hash": "7213cb91efe32c1044e755e1e2666bc15a800e2fb2caab4873ac8716627b3dff"
-    },
-    "SitecoreHeroSection": {
-      "version": "1.0.0",
-      "hash": "00a29c24101b969efaa8c9140478a7d7da0f2f73f392bee927b9ccffb4ed46a1"
-    },
-    "SitecoreContentCard": {
-      "version": "1.0.0",
-      "hash": "c3f1356488c0acc4077a1a29cbaf0b9bb4b813b0c6c53dd0d82d8a1deaf14da7"
-    },
-    "SitecoreConditionalPanel": {
-      "version": "1.0.0",
-      "hash": "18113e757938c3d23802115596ed138dc2c0c4d31c68c4d1bc4e92796ae272e0"
-    },
-    "SitecoreHeading": {
-      "version": "1.0.0",
-      "hash": "cb35d1dce9f5a8d0de32994268ffa48305881d04afda13bcd16d944689b8c66a"
-    },
-    "SitecoreRichText": {
-      "version": "1.0.0",
-      "hash": "cd2ded147b9086b5557fa5e384d6b658cee3e5bddacb4a455a6795fde47fc0bc"
-    },
-    "SitecoreCtaLink": {
-      "version": "1.0.0",
-      "hash": "b7a4fc03419db8c7ef596e30299866bf6d2fe2a4f2482f52b9b84617ef21cd57"
-    },
-    "SitecoreActionButton": {
-      "version": "1.0.0",
-      "hash": "4d6dd319981fb56c8f49090373d06cfce032027ddd1d8e95ee5e635ae2096162"
     }
   }
 }

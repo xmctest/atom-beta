@@ -3,31 +3,32 @@ import {
   defineAtomsCatalog,
   defineAtomsRegistry,
   textFieldSchema,
-  richTextFieldSchema,
-  linkFieldSchema,
+  // richTextFieldSchema,
+  // linkFieldSchema,
 } from '@sitecore-content-sdk/nextjs/atoms';
 import { shadcnComponentDefinitions } from '@json-render/shadcn/catalog';
 import { shadcnComponents } from '@json-render/shadcn';
 import { TextAtom } from 'src/atoms/components/TextAtom';
-import { Heading } from 'src/atoms/components/Heading';
-import { RichTextBlock } from 'src/atoms/components/RichTextBlock';
-import { CtaLink } from 'src/atoms/components/CtaLink';
-import { HeroSection } from 'src/atoms/components/HeroSection';
-import { SitecoreActionButton } from 'src/atoms/components/SitecoreActionButton';
-import { SitecoreConditionalPanel } from 'src/atoms/components/SitecoreConditionalPanel';
-import { SitecorePageLayout } from 'src/atoms/components/SitecorePageLayout';
-import { SitecoreContentCard } from 'src/atoms/components/SitecoreContentCard';
+// Temporarily unused while Sitecore registry entries are disabled
+// import { Heading } from 'src/atoms/components/Heading';
+// import { RichTextBlock } from 'src/atoms/components/RichTextBlock';
+// import { CtaLink } from 'src/atoms/components/CtaLink';
+// import { HeroSection } from 'src/atoms/components/HeroSection';
+// import { SitecoreActionButton } from 'src/atoms/components/SitecoreActionButton';
+// import { SitecoreConditionalPanel } from 'src/atoms/components/SitecoreConditionalPanel';
+// import { SitecorePageLayout } from 'src/atoms/components/SitecorePageLayout';
+// import { SitecoreContentCard } from 'src/atoms/components/SitecoreContentCard';
 import { customAtomActions } from 'src/atoms/registry-actions';
 
-const sitecoreFieldParents = [
-  'SitecorePageLayout',
-  'SitecoreHeroSection',
-  'SitecoreContentCard',
-  'SitecoreConditionalPanel',
-  'Stack',
-  'Card',
-  'Grid',
-] as const;
+// const sitecoreFieldParents = [
+//   'SitecorePageLayout',
+//   'SitecoreHeroSection',
+//   'SitecoreContentCard',
+//   'SitecoreConditionalPanel',
+//   'Stack',
+//   'Card',
+//   'Grid',
+// ] as const;
 
 export const catalog = defineAtomsCatalog({
   version: '1.0.4',
@@ -86,105 +87,106 @@ export const catalog = defineAtomsCatalog({
     ButtonGroup: shadcnComponentDefinitions.ButtonGroup,
     Pagination: shadcnComponentDefinitions.Pagination,
 
+    // Temporarily disabled — try standard actions + shadcn first
     // Custom Sitecore field-backed atoms (QA coverage: events, visibility, composition)
-    SitecorePageLayout: {
-      version: '1.0.0',
-      props: z.object({}),
-      description: 'Top-level layout container for page composition and allowedChildren testing',
-      slots: ['default'],
-      allowedChildren: [
-        'SitecoreHeroSection',
-        'SitecoreConditionalPanel',
-        'SitecoreContentCard',
-        'Stack',
-        'Grid',
-        'Card',
-      ],
-    },
-    SitecoreHeroSection: {
-      version: '1.0.0',
-      props: z.object({}),
-      description: 'Hero container for Sitecore field atoms and shadcn layout children',
-      slots: ['default'],
-      allowedChildren: [
-        'SitecoreHeading',
-        'SitecoreRichText',
-        'SitecoreCtaLink',
-        'SitecoreActionButton',
-        'SitecoreConditionalPanel',
-        'Stack',
-        'Card',
-        'Button',
-      ],
-      allowedParents: ['SitecorePageLayout', 'Stack', 'Grid'],
-    },
-    SitecoreContentCard: {
-      version: '1.0.0',
-      props: z.object({
-        title: textFieldSchema(),
-      }),
-      description: 'Card slot with allowedParents constraints for nested composition QA',
-      slots: ['default'],
-      allowedChildren: [
-        'SitecoreHeading',
-        'SitecoreRichText',
-        'SitecoreCtaLink',
-        'SitecoreActionButton',
-        'Image',
-        'Button',
-        'Text',
-      ],
-      allowedParents: ['SitecorePageLayout', 'SitecoreHeroSection', 'Grid', 'Stack'],
-    },
-    SitecoreConditionalPanel: {
-      version: '1.0.0',
-      props: z.object({
-        panelLabel: textFieldSchema(),
-      }),
-      description:
-        'Wrapper for visibility (show) rule testing — attach show bindings on child elements in Design Studio',
-      slots: ['default'],
-      allowedChildren: [
-        'SitecoreHeading',
-        'SitecoreRichText',
-        'SitecoreActionButton',
-        'SitecoreCtaLink',
-        'Text',
-        'Button',
-        'Badge',
-      ],
-      allowedParents: ['SitecorePageLayout', 'SitecoreHeroSection', 'Stack', 'Card'],
-    },
-    SitecoreHeading: {
-      version: '1.0.0',
-      props: z.object({ title: textFieldSchema() }),
-      description: 'Sitecore text field heading',
-      slots: ['default'],
-      allowedParents: [...sitecoreFieldParents],
-    },
-    SitecoreRichText: {
-      version: '1.0.0',
-      props: z.object({ body: richTextFieldSchema() }),
-      description: 'Sitecore rich text field block',
-      slots: ['default'],
-      allowedParents: [...sitecoreFieldParents],
-    },
-    SitecoreCtaLink: {
-      version: '1.0.0',
-      props: z.object({ cta: linkFieldSchema() }),
-      description: 'Sitecore link field CTA — emits press for navigate / trackEvent bindings',
-      slots: ['default'],
-      events: ['press'],
-      allowedParents: [...sitecoreFieldParents],
-    },
-    SitecoreActionButton: {
-      version: '1.0.0',
-      props: z.object({ label: textFieldSchema() }),
-      description:
-        'Custom action button — emits press; bind to validateForm, navigate, trackEvent, push, or setState',
-      events: ['press'],
-      allowedParents: [...sitecoreFieldParents],
-    },
+    // SitecorePageLayout: {
+    //   version: '1.0.0',
+    //   props: z.object({}),
+    //   description: 'Top-level layout container for page composition and allowedChildren testing',
+    //   slots: ['default'],
+    //   allowedChildren: [
+    //     'SitecoreHeroSection',
+    //     'SitecoreConditionalPanel',
+    //     'SitecoreContentCard',
+    //     'Stack',
+    //     'Grid',
+    //     'Card',
+    //   ],
+    // },
+    // SitecoreHeroSection: {
+    //   version: '1.0.0',
+    //   props: z.object({}),
+    //   description: 'Hero container for Sitecore field atoms and shadcn layout children',
+    //   slots: ['default'],
+    //   allowedChildren: [
+    //     'SitecoreHeading',
+    //     'SitecoreRichText',
+    //     'SitecoreCtaLink',
+    //     'SitecoreActionButton',
+    //     'SitecoreConditionalPanel',
+    //     'Stack',
+    //     'Card',
+    //     'Button',
+    //   ],
+    //   allowedParents: ['SitecorePageLayout', 'Stack', 'Grid'],
+    // },
+    // SitecoreContentCard: {
+    //   version: '1.0.0',
+    //   props: z.object({
+    //     title: textFieldSchema(),
+    //   }),
+    //   description: 'Card slot with allowedParents constraints for nested composition QA',
+    //   slots: ['default'],
+    //   allowedChildren: [
+    //     'SitecoreHeading',
+    //     'SitecoreRichText',
+    //     'SitecoreCtaLink',
+    //     'SitecoreActionButton',
+    //     'Image',
+    //     'Button',
+    //     'Text',
+    //   ],
+    //   allowedParents: ['SitecorePageLayout', 'SitecoreHeroSection', 'Grid', 'Stack'],
+    // },
+    // SitecoreConditionalPanel: {
+    //   version: '1.0.0',
+    //   props: z.object({
+    //     panelLabel: textFieldSchema(),
+    //   }),
+    //   description:
+    //     'Wrapper for visibility (show) rule testing — attach show bindings on child elements in Design Studio',
+    //   slots: ['default'],
+    //   allowedChildren: [
+    //     'SitecoreHeading',
+    //     'SitecoreRichText',
+    //     'SitecoreActionButton',
+    //     'SitecoreCtaLink',
+    //     'Text',
+    //     'Button',
+    //     'Badge',
+    //   ],
+    //   allowedParents: ['SitecorePageLayout', 'SitecoreHeroSection', 'Stack', 'Card'],
+    // },
+    // SitecoreHeading: {
+    //   version: '1.0.0',
+    //   props: z.object({ title: textFieldSchema() }),
+    //   description: 'Sitecore text field heading',
+    //   slots: ['default'],
+    //   allowedParents: [...sitecoreFieldParents],
+    // },
+    // SitecoreRichText: {
+    //   version: '1.0.0',
+    //   props: z.object({ body: richTextFieldSchema() }),
+    //   description: 'Sitecore rich text field block',
+    //   slots: ['default'],
+    //   allowedParents: [...sitecoreFieldParents],
+    // },
+    // SitecoreCtaLink: {
+    //   version: '1.0.0',
+    //   props: z.object({ cta: linkFieldSchema() }),
+    //   description: 'Sitecore link field CTA — emits press for navigate / trackEvent bindings',
+    //   slots: ['default'],
+    //   events: ['press'],
+    //   allowedParents: [...sitecoreFieldParents],
+    // },
+    // SitecoreActionButton: {
+    //   version: '1.0.0',
+    //   props: z.object({ label: textFieldSchema() }),
+    //   description:
+    //     'Custom action button — emits press; bind to validateForm, navigate, trackEvent, push, or setState',
+    //   events: ['press'],
+    //   allowedParents: [...sitecoreFieldParents],
+    // },
   },
   actions: {
     navigate: {
@@ -255,14 +257,15 @@ export const registry = defineAtomsRegistry(catalog, {
     ButtonGroup: shadcnComponents.ButtonGroup,
     Pagination: shadcnComponents.Pagination,
 
-    SitecorePageLayout: SitecorePageLayout,
-    SitecoreHeroSection: HeroSection,
-    SitecoreContentCard: SitecoreContentCard,
-    SitecoreConditionalPanel: SitecoreConditionalPanel,
-    SitecoreHeading: Heading,
-    SitecoreRichText: RichTextBlock,
-    SitecoreCtaLink: CtaLink,
-    SitecoreActionButton: SitecoreActionButton,
+    // Temporarily disabled — try standard actions + shadcn first
+    // SitecorePageLayout: SitecorePageLayout,
+    // SitecoreHeroSection: HeroSection,
+    // SitecoreContentCard: SitecoreContentCard,
+    // SitecoreConditionalPanel: SitecoreConditionalPanel,
+    // SitecoreHeading: Heading,
+    // SitecoreRichText: RichTextBlock,
+    // SitecoreCtaLink: CtaLink,
+    // SitecoreActionButton: SitecoreActionButton,
   },
   actions: customAtomActions,
 });
