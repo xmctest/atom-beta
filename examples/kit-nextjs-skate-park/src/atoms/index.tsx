@@ -31,7 +31,7 @@ import { customAtomActions } from 'src/atoms/registry-actions';
 // ] as const;
 
 export const catalog = defineAtomsCatalog({
-  version: '1.0.4',
+  version: '1.0.5',
   components: {
     Card: {
       ...shadcnComponentDefinitions.Card,
@@ -214,6 +214,13 @@ export const catalog = defineAtomsCatalog({
       }),
       description:
         'Built-in json-render form validation — writes { valid, errors } to /formValidation or the supplied statePath',
+    },
+    submit: {
+      params: z.object({
+        formId: z.string(),
+      }),
+      description:
+        'POST form state at /{formId} to /api/atoms/submit — bind after validateForm; fields should use $bindState under that formId (e.g. /contact/email)',
     },
   },
 });
