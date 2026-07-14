@@ -1,6 +1,6 @@
 {
-  "version": "1.0.5",
-  "generated": "2026-07-14T09:01:25.131Z",
+  "version": "1.0.6",
+  "generated": "2026-07-14T09:22:14.991Z",
   "atoms": {
     "Card": {
       "hash": "29f8648def21191f279bc72ffd6b66df8eab9fc16f03f88e86a324a6db4b3204"
@@ -90,7 +90,7 @@
       "hash": "08060443395f891ec0e4540807858deb4fb7bbed90784217cfb3badfaadd436f"
     },
     "Button": {
-      "hash": "b762dcd91a0f8fccc2c07777e2133ee6c8d52112c6e27b1c194e7b23ed826136"
+      "hash": "6f6df4515f0d1312b9d4457996f4e9b030c9b26f5eeaed36108848a28c6fa3ba"
     },
     "Link": {
       "hash": "3f60627b85f26de12f4702864f0a2df1d82e28e0cd1f03ef11a9e38a3910d110"

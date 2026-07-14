@@ -1,4 +1,5 @@
 @import './variables.css';
+@import './shadcn-theme.css';
 @import './base.css';
 @import './app.css';
 @import './tailwind-bootstrap-grid.css';

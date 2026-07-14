@@ -31,7 +31,7 @@ import { customAtomActions } from 'src/atoms/registry-actions';
 // ] as const;
 
 export const catalog = defineAtomsCatalog({
-  version: '1.0.5',
+  version: '1.0.6',
   components: {
     Card: {
       ...shadcnComponentDefinitions.Card,
@@ -79,7 +79,15 @@ export const catalog = defineAtomsCatalog({
     Radio: shadcnComponentDefinitions.Radio,
     Switch: shadcnComponentDefinitions.Switch,
     Slider: shadcnComponentDefinitions.Slider,
-    Button: shadcnComponentDefinitions.Button,
+    Button: {
+      ...shadcnComponentDefinitions.Button,
+      description:
+        'Clickable button. Use variant "primary" for blue background + white text, "secondary" for muted, "danger" for destructive. Prefer a static variant string (not /params) unless a CM rendering parameter exists.',
+      example: {
+        label: 'Continue',
+        variant: 'primary',
+      },
+    },
     Link: shadcnComponentDefinitions.Link,
     DropdownMenu: shadcnComponentDefinitions.DropdownMenu,
     Toggle: shadcnComponentDefinitions.Toggle,
