@@ -32,6 +32,11 @@ export default defineCliConfig({
       }),
     ],
   },
+  atoms: {
+    validation: {
+      breakOnError: false,
+    },
+  },
   componentMap: {
     paths: ['src/components'],
     exclude: [

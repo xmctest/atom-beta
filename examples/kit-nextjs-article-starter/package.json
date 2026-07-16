@@ -21,6 +21,8 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
+    "@json-render/react": "^0.19.0",
+    "@json-render/shadcn": "^0.19.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
@@ -58,10 +60,10 @@
     "@radix-ui/react-toggle-group": "^1.1.10",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@radix-ui/themes": "^3.2.1",
-    "@sitecore-content-sdk/analytics-core": "^2.1.0",
-    "@sitecore-content-sdk/personalize": "^2.1.0",
-    "@sitecore-content-sdk/events": "^2.1.0",
-    "@sitecore-content-sdk/nextjs": "^2.2.0",
+    "@sitecore-content-sdk/analytics-core": "2.1.1-beta.atoms.20260709143238",
+    "@sitecore-content-sdk/events": "2.1.1-beta.atoms.20260709143238",
+    "@sitecore-content-sdk/nextjs": "2.3.0-beta.atoms.20260709143238",
+    "@sitecore-content-sdk/personalize": "2.1.1-beta.atoms.20260709143238",
     "@sitecore-feaas/clientside": "^0.6.0",
     "@sitecore/components": "~2.1.0",
     "@tailwindcss/cli": "^4.1.11",
@@ -108,11 +110,11 @@
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
-    "zod": "^3.25.71"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@sitecore-content-sdk/cli": "^2.2.0",
+    "@sitecore-content-sdk/cli": "2.3.0-beta.atoms.20260709143238",
     "@tailwindcss/postcss": "^4",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -161,7 +163,7 @@
     "js-yaml": ">=4.2.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production npm-run-all --serial sitecore-tools:build next:build",
+    "build": "cross-env NODE_ENV=production npm-run-all --serial sitecore-tools:atoms:validate sitecore-tools:build next:build",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "type-check": "tsc --noEmit --incremental false",
@@ -171,8 +173,10 @@
     "sitecore-tools:build": "sitecore-tools project build",
     "sitecore-tools:generate-map": "sitecore-tools project component generate-map",
     "sitecore-tools:generate-map:watch": "sitecore-tools project component generate-map --watch",
-    "dev": "cross-env NODE_ENV=development npm-run-all --serial sitecore-tools:generate-map sitecore-tools:build --parallel next:dev sitecore-tools:generate-map:watch",
+    "dev": "cross-env NODE_ENV=development npm-run-all --serial sitecore-tools:atoms:validate sitecore-tools:generate-map sitecore-tools:build --parallel next:dev sitecore-tools:generate-map:watch",
     "start": "cross-env-shell NODE_ENV=production npm-run-all --serial build next:start",
+    "sitecore-tools:atoms:validate": "sitecore-tools project atoms validate",
+    "sitecore-tools:atoms:update": "sitecore-tools project atoms update",
     "test": "jest",
     "test:unit": "jest --testPathIgnorePatterns=geo",
     "test:geo": "jest --testPathPatterns=geo --coverage=false",
