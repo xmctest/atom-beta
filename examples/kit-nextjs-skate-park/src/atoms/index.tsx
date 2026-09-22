@@ -28,6 +28,7 @@ const sitecoreFieldParents = ['Stack', 'Card', 'Grid', 'Dialog', 'Drawer'] as co
 
 export const catalog = defineAtomsCatalog({
   version: '1.0.9',
+  stylingSolution: 'tailwind',
   components: {
     Card: {
       ...shadcnComponentDefinitions.Card,
