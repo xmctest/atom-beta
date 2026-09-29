@@ -102,6 +102,7 @@ export const catalog = defineAtomsCatalog({
       },
       slots: ['default'],
       allowedParents: [...sitecoreFieldParents],
+      legacy: true,
     },
     SitecoreDate: {
       version: '1.0.0',

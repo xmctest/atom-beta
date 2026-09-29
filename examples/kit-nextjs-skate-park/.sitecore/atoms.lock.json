@@ -1,6 +1,6 @@
 {
   "version": "1.0.9",
-  "generated": "2026-09-22T09:39:52.974Z",
+  "generated": "2026-09-29T08:20:31.546Z",
   "atoms": {
     "Card": {
       "hash": "455b34e24748249ec1619ebb869717c781678da3240b66b34a05a481e1a8d2c8"
@@ -112,7 +112,7 @@
     },
     "SitecoreRichText": {
       "version": "1.0.0",
-      "hash": "cec1d304be6821632731d252f427db80e34474e4c99bea674f2e0ca722276062"
+      "hash": "fc791671b71a234809cb87b43f34b7e420a791dc49288bb6e15c318d00000a3d"
     },
     "SitecoreDate": {
       "version": "1.0.0",
