@@ -32,10 +32,10 @@
   "dependencies": {
     "@json-render/react": "^0.20.0",
     "@json-render/shadcn": "^0.20.0",
-    "@sitecore-content-sdk/analytics-core": "2.2.0-beta.atoms.20260929070407",
-    "@sitecore-content-sdk/events": "2.2.0-beta.atoms.20260929070407",
-    "@sitecore-content-sdk/nextjs": "3.0.0-beta.atoms.20260929070407",
-    "@sitecore-content-sdk/personalize": "2.2.0-beta.atoms.20260929070407",
+    "@sitecore-content-sdk/analytics-core": "2.2.0-beta.atoms.20261005083728",
+    "@sitecore-content-sdk/events": "2.2.0-beta.atoms.20261005083728",
+    "@sitecore-content-sdk/nextjs": "3.0.0-beta.atoms.20261005083728",
+    "@sitecore-content-sdk/personalize": "2.2.0-beta.atoms.20261005083728",
     "@sitecore-feaas/clientside": "^0.6.0",
     "@sitecore/components": "~2.1.0",
     "@tailwindcss/node": "^4",
@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@sitecore-content-sdk/cli": "2.3.0-beta.atoms.20260929070407",
+    "@sitecore-content-sdk/cli": "2.3.0-beta.atoms.20261005083728",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^24.10.4",
     "@types/react": "^19.2.7",
